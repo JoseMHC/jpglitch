@@ -26,7 +26,7 @@ class Jpeg(object):
         try:
             self.header_length = self.get_header_length()
         except ValueError as e:
-            raise click.BadParameter(message=e.message)
+            raise click.BadParameter(message=e.args[0])
 
         self.parameters = {
             'amount': amount,
